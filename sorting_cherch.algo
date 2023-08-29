@@ -1,0 +1,17 @@
+PROCEDURE insertion_sort(tab : ARRAY_OF INTEGER)
+VAR
+   key, i, j : INTEGER;
+BEGIN
+   FOR i FROM 1 TO tab.length DO
+   key := tab[i];
+   j := i-1;
+   /* Move elements of arr[0..i-1], that are
+    greater than key, to one position ahead
+    of their current position */
+   WHILE (j>=0 && tab[j]>key) DO
+    tab[j+1] := tab[ j ];
+    j := j-1;
+   END_WHILE
+   tab[j+1] = key;
+   END_FOR
+END
